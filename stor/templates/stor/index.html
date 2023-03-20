@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Stor{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('stor.create') }}">Создать запись</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+    <article class="post">
+      <header>
+        <div>
+          <h1 >{{ post['title'] }}</h1>
+          <div class="about">от {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+        {% if g.user['id'] == post['author_id'] %}
+          <a class="action" href="{{ url_for('stor.update', id=post['id']) }}">Редактировать</a>
+        {% endif %}
+      </header>
+      <p class="body">{{ post['body'] }}</p>
+    </article>
+    
+      <a href="{{ url_for('stor.comment', id=post['id']) }}">Комментарии</a>
+    
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+  <div class="pagination">
+    {% if page > 1 %}
+    <a href="?page={{ page - 1 }}">Previous</a>
+    {% endif %}
+
+    {% for i in range(1, total_pages + 1) %}
+    {% if i == page %}
+    <span class="current-page">{{ i }}</span>
+    {% else %}
+    <a href="?page={{ i }}">{{ i }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if page < total_pages %}
+    <a href="?page={{ page + 1 }}">Next</a>
+    {% endif %}
+    
+</div>
+{% endblock %}

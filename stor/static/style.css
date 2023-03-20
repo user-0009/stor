@@ -1,0 +1,164 @@
+/* Общие стили */
+
+html {
+    font-family: sans-serif;
+    background: #333;
+    padding: 1rem;
+    color: #fff;
+  }
+  
+  body {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #222;
+    color: #ccc;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
+    color: #b39ddb;
+    margin: 1rem 0;
+  }
+  
+  a {
+    color: #b39ddb;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #444;
+  }
+  
+  /* Стили для навигационной панели */
+  
+  nav {
+    background: #222;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav h1 {
+    flex: auto;
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  nav h1 a {
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a, nav ul li span, header .action {
+    display: block;
+    padding: 0.5rem;
+  }
+  
+  nav ul li:not(:last-child) {
+    margin-right: 1rem;
+  }
+  
+  nav ul li a:hover {
+    background: #444;
+    text-decoration: none;
+  }
+  
+  /* Стили для содержимого страницы */
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .content > header {
+    border-bottom: 1px solid #444;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+  
+  .content > header h1 {
+    flex: auto;
+    margin: 0;
+  }
+  
+  .flash {
+    margin: 1em 0;
+    padding: 1em;
+    background: #9575cd;
+    border: 1px solid #7e57c2;
+  }
+  
+  .post > header {
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.85em;
+    margin-bottom: 1rem;
+  }
+  
+  .post > header > div:first-of-type {
+    flex: auto;
+  }
+  
+  .post > header h1 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  
+  .post .about {
+    color: #ccc;
+    font-style: italic;
+  }
+  
+  .post .body {
+    white-space: pre-line;
+  }
+  
+  .content:last-child {
+    margin-bottom: 0;
+  }
+  
+  .content form {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  .content input, .content textarea {
+    margin-bottom: 1em;
+    background: #444;
+    color: #ccc;
+    border: none;
+    padding: 0.5em;
+    font-size: 1rem;
+  }
+  
+  .content textarea {
+    min-height: 12em;
+    resize: vertical;
+  }
+  
+  input.danger {
+    color: #e53935;
+  }
+  
+  input[type=submit] {
+    align-self: start;
+    min-width: 10em;
+    background: #b39ddb;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+  }
